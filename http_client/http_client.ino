@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "S25";
-const char* password = "123456";
+const char* ssid = "VuiOmada";
+const char* password = "camvy156";
 
 void setup() {
   Serial.begin(115200);
@@ -21,7 +21,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  // === Send GET ===
+  // Send GET
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
 
@@ -47,15 +47,18 @@ void setup() {
 
   delay(2000);
 
-  // === Send POST ===
+  // Send POST
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
 
     String url = "https://postman-echo.com/post";
     http.begin(url);
 
-    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    String body = "param1=value1&param2=value2";
+    // http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    // String body = "param1=123&param2=value2";
+
+    http.addHeader("Content-Type", "application/json");
+    String body = "{\"param1\":123,\"param2\":\"value2\"}";
 
     int httpCode = http.POST(body);
 
