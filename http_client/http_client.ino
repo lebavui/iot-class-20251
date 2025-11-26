@@ -39,7 +39,7 @@ void setup() {
         Serial.println(payload);
       }
     } else {
-      Serial.printf("Error: %s\n", http.errorToString(httpCode).c_str());
+      Serial.printf("Error: %s\n", http.errorToString(httpCode));
     }
 
     http.end();
@@ -71,7 +71,7 @@ void setup() {
         Serial.println(payload);
       }
     } else {
-      Serial.printf("Error: %s\n", http.errorToString(httpCode).c_str());
+      Serial.printf("Error: %s\n", http.errorToString(httpCode));
     }
 
     http.end();

@@ -1,10 +1,6 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-#define WIFI_SSID "VuiOmada"
-#define WIFI_PASSWORD "camvy156"
-#define WIFI_CHANNEL 6
-
 WebServer server(80);
 
 const int LED = 2;
